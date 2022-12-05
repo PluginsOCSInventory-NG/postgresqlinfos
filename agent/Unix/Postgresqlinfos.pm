@@ -37,7 +37,7 @@ sub postgresqlinfos_inventory_handler {
     $logger->debug("Yeah you are in postgresqlinfos_inventory_handler:)");
     
     # check if psql available
-    if (`su postgres -c 'psql --version'`) {
+    if (`su postgres -c 'psql --version' 2>/dev/null`) {
         $logger->debug("postgresqlinfos : psql command found");
     } else {
         $logger->debug("postgresqlinfos : psql command not found");
